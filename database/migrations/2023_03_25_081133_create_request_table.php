@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('request', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('customer_id');
+            $table->bigInteger('mechanic_id');
             $table->bigInteger('service_id');
             $table->string('status');
             $table->timestamps();
