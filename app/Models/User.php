@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\requests\Request;
+use App\Models\mechanicServices\MechanicService;
+use App\Models\payments\Payment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +44,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function requests(){
+        return $this->hasMany(Request::class);
+    }
+
+    public function mechanicServices(){
+    return $this->hasMany(MechanicService::class);
+    }
+
+    public function payments(){
+    return $this->hasMany(Payment::class);
+    }
+
+
 }
