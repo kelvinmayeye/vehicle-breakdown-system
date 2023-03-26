@@ -18,7 +18,7 @@
               <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
             <div class="text-center mt-4">
-              <a href="#">Register Here</a>
+              <a href="{{ url('register') }}">Register Here</a>
             </div>
           </div>
         </div>

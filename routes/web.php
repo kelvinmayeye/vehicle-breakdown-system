@@ -19,3 +19,6 @@ use App\Http\Controllers\users\UserController;
 // });
 
 Route::get('/',[UserController::class,'getIndex']);
+Route::get('register',[UserController::class,'getRegister']);
+
+Route::post('register-customer',[UserController::class,'storeCustomer']);
