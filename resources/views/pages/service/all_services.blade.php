@@ -15,23 +15,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                @foreach ( $services as $key=>$service )
+                <tr>
+                    <th>{{ $key+1 }}</th>
+                    <td>{{ $service->name }}</td>
+                    <td>{{ $service->description }}</td>
+                    <td>{{ $service->price }}</td>
+                    <td>{{ $service->mechanicServices->count() }}</td>
+                  </tr>
+                @endforeach
             </tbody>
           </table>
 

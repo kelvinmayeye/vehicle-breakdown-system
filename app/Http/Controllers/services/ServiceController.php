@@ -11,8 +11,8 @@ class ServiceController extends Controller
 {
     //
     public function getAllservice(){
-
-        return view('pages.service.all_services');
+        $services = Service::all();
+        return view('pages.service.all_services',compact('services'));
     }
 
     public function store(Request $request){

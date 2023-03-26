@@ -12,6 +12,7 @@ class MechanicService extends Model
 {
     use HasFactory;
 
+    protected $table = "mechanic_service";
 
     public function mechanic(){
     return $this->belongsTo(User::class, 'mechanic_id');
