@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="" method="POST">
+            <form action="{{ url('store-service') }}" method="POST">
                 @csrf
               <div class="row">
                   <div class="col-md-12 col-sm-12">

@@ -30,4 +30,5 @@ Route::post('register-customer',[UserController::class,'storeCustomer']);
 
 
 Route::get('all-services',[ServiceController::class,'getAllservice']);
+Route::post('store-service',[ServiceController::class,'store']);
 
