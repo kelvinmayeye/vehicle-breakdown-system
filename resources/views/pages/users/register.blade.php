@@ -12,13 +12,13 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Enter your full name">
+                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
                       </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                       </div>
                 </div>
               </div>
@@ -27,13 +27,13 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" title="minimum character is 8" required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="password_confirmation">Confirm Password</label>
-                        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" minlength="8" title="minimum character is 8" required>
                     </div>
                 </div>
               </div>
@@ -41,7 +41,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="phone_number">Phone Number</label>
-                        <input type="text" class="form-control" name="phone_number" placeholder="Enter Phone number">
+                        <input type="text" class="form-control" name="phone_number" placeholder="Enter Phone number" minlength="10" title="minimum character should be 10 number" required>
                      </div>
               </div>
               <button type="submit" class="btn btn-primary btn-block mx-2">Register</button>
