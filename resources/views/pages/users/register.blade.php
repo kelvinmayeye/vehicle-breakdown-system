@@ -47,6 +47,9 @@
               <button type="submit" class="btn btn-primary btn-block mx-2">Register</button>
             </form>
           </div>
+          <div class="text-center mt-4">
+            <a href="{{ url('/') }}">Login Here</a>
+          </div>
         </div>
       </div>
     </div>

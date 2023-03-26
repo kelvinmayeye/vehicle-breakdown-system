@@ -39,4 +39,8 @@ class UserController extends Controller
         Session::flash('success','you\'re successfully registered');
          return back();
     }
+
+    public function getDashBoard(){
+        return view('pages.users.dashboard');
+    }
 }

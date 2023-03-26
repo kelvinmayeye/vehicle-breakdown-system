@@ -15,7 +15,7 @@
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Login</button>
+              <a href="{{ url('dashboard') }}" class="btn btn-primary btn-block">Login</a>
             </form>
             <div class="text-center mt-4">
               <a href="{{ url('register') }}">Register Here</a>

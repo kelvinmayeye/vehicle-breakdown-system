@@ -18,7 +18,11 @@ use App\Http\Controllers\users\UserController;
 //     return view('layouts.master');
 // });
 
+Route::get('dashboard',[UserController::class,'getDashBoard'])->name('home');
+
+
 Route::get('/',[UserController::class,'getIndex']);
 Route::get('register',[UserController::class,'getRegister']);
 
 Route::post('register-customer',[UserController::class,'storeCustomer']);
+
