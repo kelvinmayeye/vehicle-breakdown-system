@@ -12,7 +12,11 @@
 
 <body>
 @include('layouts.main_header')
-
+<div class="row">
+    <div class="col m-2">
+        @include('partials.notification')
+    </div>
+</div>
     @yield('content')
 
 
