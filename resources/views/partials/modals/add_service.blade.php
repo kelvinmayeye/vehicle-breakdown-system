@@ -18,6 +18,12 @@
                       </div>
                   </div>
                   <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="">Price</label>
+                        <input type="text" class="form-control" name="price" minlength="4" required>
+                    </div>
+                </div>
+                  <div class="col-md-12 col-sm-12">
                       <div class="form-group">
                         <label for="">Description</label>
                         <textarea class="form-control" name="description" cols="30" rows="5">write service description</textarea>

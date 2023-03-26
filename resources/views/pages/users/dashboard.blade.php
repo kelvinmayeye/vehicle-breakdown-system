@@ -57,7 +57,7 @@
             <ul>
                 <li><a href="#" data-toggle="modal" data-target="#addServiceModal">Add Service</a></li>
                 {{-- show service and number of mechanics that offers the service --}}
-                <li><a href="#">All Services</a></li>
+                <li><a href="{{ url('all-services') }}">All Services</a></li>
                 <li><a href="#">Delete Service</a></li>
                 <li><a href="#">Update Service</a></li>
               </ul>

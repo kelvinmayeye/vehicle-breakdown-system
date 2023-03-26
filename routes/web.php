@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users\UserController;
 
+use App\Http\Controllers\services\ServiceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +27,7 @@ Route::get('/',[UserController::class,'getIndex']);
 Route::get('register',[UserController::class,'getRegister']);
 
 Route::post('register-customer',[UserController::class,'storeCustomer']);
+
+
+Route::get('all-services',[ServiceController::class,'getAllservice']);
 
