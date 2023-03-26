@@ -20,7 +20,7 @@
                   <div class="col-md-12 col-sm-12">
                     <div class="form-group">
                       <label for="">Price</label>
-                        <input type="text" class="form-control" name="price" minlength="4" required>
+                        <input type="text" class="form-control" name="price" minlength="4" maxlength="11" pattern="[0-9]+s" required>
                     </div>
                 </div>
                   <div class="col-md-12 col-sm-12">
