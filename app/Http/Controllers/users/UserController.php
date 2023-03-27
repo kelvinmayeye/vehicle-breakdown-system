@@ -5,6 +5,7 @@ namespace App\Http\Controllers\users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class UserController extends Controller
@@ -42,5 +43,32 @@ class UserController extends Controller
 
     public function getDashBoard(){
         return view('pages.users.dashboard');
+    }
+
+    public function login(Request $request){
+
+            $this->validate($request,[
+                "email"=>"required",
+                "password"=>"required"
+            ]);
+
+            $credentials = [
+                "email"=>$request->email,
+                "password"=>$request->password
+            ];
+
+        if(Auth::attempt($credentials)){
+
+            if(Auth::user()->role==0){
+                return redirect('home');
+            }elseif(Auth::user()->role==1){
+                return redirect('home');
+            }else{
+                return redirect('home');
+            }
+
+        }
+        Session::flash("error","username or password is invalid");
+        return back();
     }
 }

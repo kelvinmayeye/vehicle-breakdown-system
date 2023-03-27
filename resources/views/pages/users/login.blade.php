@@ -6,16 +6,17 @@
         <div class="card">
           <div class="card-body">
             <h3 class="text-center mb-4">Login</h3>
-            <form>
+            <form action="{{ url('login') }}" method="POST">
+                @csrf
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
-              <a href="{{ url('dashboard') }}" class="btn btn-primary btn-block">Login</a>
+              <input type="submit" class="btn btn-primary btn-block" value="Login">
             </form>
             <div class="text-center mt-4">
               <a href="{{ url('register') }}">Register Here</a>

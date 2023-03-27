@@ -21,7 +21,8 @@ use App\Http\Controllers\request\RequestController;
 //     return view('layouts.master');
 // });
 
-Route::get('dashboard',[UserController::class,'getDashBoard'])->name('home');
+Route::get('home',[UserController::class,'getDashBoard'])->name('home');
+Route::post('login',[UserController::class,'login']);
 
 
 Route::get('/',[UserController::class,'getIndex']);
@@ -33,5 +34,6 @@ Route::post('register-customer',[UserController::class,'storeCustomer']);
 Route::get('all-services',[ServiceController::class,'getAllservice']);
 Route::post('store-service',[ServiceController::class,'store']);
 
-Route::get('request',[RequestController::class,'store']);
+Route::get('request',[RequestController::class,'getMakeRequest']);
+Route::get('make-request',[RequestController::class,'store']);
 
