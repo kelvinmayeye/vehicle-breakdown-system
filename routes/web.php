@@ -21,19 +21,21 @@ use App\Http\Controllers\request\RequestController;
 //     return view('layouts.master');
 // });
 
-Route::get('home',[UserController::class,'getDashBoard'])->name('home');
-Route::post('login',[UserController::class,'login']);
-
 
 Route::get('/',[UserController::class,'getIndex']);
-Route::get('register',[UserController::class,'getRegister']);
+Route::post('login',[UserController::class,'login']);
 
+Route::get('register',[UserController::class,'getRegister']);
 Route::post('register-customer',[UserController::class,'storeCustomer']);
 
+Route::middleware("auth")->group(function(){
+    Route::get('home',[UserController::class,'getDashBoard'])->name('home');
 
-Route::get('all-services',[ServiceController::class,'getAllservice']);
-Route::post('store-service',[ServiceController::class,'store']);
 
-Route::get('request',[RequestController::class,'getMakeRequest']);
-Route::get('make-request',[RequestController::class,'store']);
+    Route::get('all-services',[ServiceController::class,'getAllservice']);
+    Route::post('store-service',[ServiceController::class,'store']);
 
+
+    Route::get('request',[RequestController::class,'getMakeRequest']);
+    Route::get('make-request',[RequestController::class,'store']);
+});
