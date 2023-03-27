@@ -78,6 +78,14 @@
                 <li><a href="#">Disable Mechanic</a></li>
               </ul>
         </div>
+        <div class="col">
+            <h4 class="">User management</h4>
+            <h6>{{auth()->user()->name}}</h6>
+            <form action="{{ url('logout') }}" method="POST">
+                @csrf
+                <input type="submit" class="btn btn-danger btn-sm" value="Logout">
+            </form>
+        </div>
     </div>
 
   </div>

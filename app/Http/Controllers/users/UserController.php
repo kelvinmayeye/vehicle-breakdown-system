@@ -71,4 +71,11 @@ class UserController extends Controller
         Session::flash("error","username or password is invalid");
         return back();
     }
+
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }

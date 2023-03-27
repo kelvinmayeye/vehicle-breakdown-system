@@ -22,7 +22,7 @@ use App\Http\Controllers\request\RequestController;
 // });
 
 
-Route::get('/',[UserController::class,'getIndex']);
+Route::get('/',[UserController::class,'getIndex'])->name('login');
 Route::post('login',[UserController::class,'login']);
 
 Route::get('register',[UserController::class,'getRegister']);
@@ -30,6 +30,7 @@ Route::post('register-customer',[UserController::class,'storeCustomer']);
 
 Route::middleware("auth")->group(function(){
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
+    Route::post('logout',[UserController::class,'logout']);
 
 
     Route::get('all-services',[ServiceController::class,'getAllservice']);
