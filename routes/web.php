@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users\UserController;
 
 use App\Http\Controllers\services\ServiceController;
+use App\Http\Controllers\request\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,6 @@ Route::post('register-customer',[UserController::class,'storeCustomer']);
 
 Route::get('all-services',[ServiceController::class,'getAllservice']);
 Route::post('store-service',[ServiceController::class,'store']);
+
+Route::get('request',[RequestController::class,'store']);
 

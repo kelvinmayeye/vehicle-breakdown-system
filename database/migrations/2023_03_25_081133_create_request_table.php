@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('customer_id');
             $table->bigInteger('mechanic_id');
             $table->bigInteger('service_id');
+            $table->string('location')->nullable();
             $table->string('status');
             $table->timestamps();
         });
