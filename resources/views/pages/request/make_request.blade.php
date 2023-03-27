@@ -4,13 +4,22 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h4>Make Request</h4>
-            <form method="POST" action="">
+            <form method="POST" action="{{ url('make-request') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="service_id">Service</label>
+                    <label for="service">Service</label>
                     <select class="form-control" name="service_id" id="service_id" required>
                         @foreach($services as $service)
                         <option value="{{ $service->id }}">{{ $service->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Mechanics</label>
+                    <select class="form-control" name="mechanic_id" required>
+                        @foreach($mechanics as $mechanic)
+                        <option value="{{ $mechanic->id }}">{{ $mechanic->name }}</option>
                         @endforeach
                     </select>
                 </div>

@@ -38,5 +38,5 @@ Route::middleware("auth")->group(function(){
 
 
     Route::get('request',[RequestController::class,'getMakeRequest']);
-    Route::get('make-request',[RequestController::class,'store']);
+    Route::post('make-request',[RequestController::class,'store']);
 });
