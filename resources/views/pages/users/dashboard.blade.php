@@ -66,7 +66,7 @@
             <h4 class="">Request</h4>
             <ul>
                 <li><a href="{{ url('request') }}">Make Request</a></li>
-                <li><a href="#">Request History</a></li>
+                <li><a href="{{ url('request-history') }}">Request History</a></li>
                 <li><a href="#">Cancel Request</a></li>
               </ul>
         </div>

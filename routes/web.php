@@ -40,4 +40,5 @@ Route::middleware("auth")->group(function(){
     Route::get('request',[RequestController::class,'getMakeRequest']);
     Route::get('request-history',[RequestController::class,'getRequestHistory']);
     Route::post('make-request',[RequestController::class,'store']);
+    Route::post('cancel-request',[RequestController::class,'cancel']);
 });

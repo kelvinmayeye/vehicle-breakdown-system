@@ -31,6 +31,7 @@ class RequestController extends Controller
         $customer_id = auth()->user()->id;
         if(!$customer_id){
             Session::flash('error','user logged in was not found');
+            return back();
         }
 
         $customerRequest = new ServiceRequest();
@@ -52,5 +53,21 @@ class RequestController extends Controller
         }
         $allRequests = ServiceRequest::where('customer_id', $customer_id)->orderBy('created_at', 'desc')->get();
         return view('pages.request.request_history',compact('allRequests'));
+    }
+
+    public function cancel(Request $request){
+        $serviceRequest = ServiceRequest::find($request->request_id);
+        if(!$serviceRequest){
+            Session::flash('error','sorry this service was not found');
+            return back();
+        }
+
+        // Set the status of the service request to "cancelled"
+        $serviceRequest->status = 'cancelled';
+        $serviceRequest->save();
+
+        Session::flash('success','Service request was successfully cancelled');
+        return redirect('request-history');
+
     }
 }
