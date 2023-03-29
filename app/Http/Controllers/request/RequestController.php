@@ -29,7 +29,6 @@ class RequestController extends Controller
         ]);
 
         $customer_id = auth()->user()->id;
-       // return $customer_id;
         if(!$customer_id){
             Session::flash('error','user logged in was not found');
         }
@@ -44,5 +43,14 @@ class RequestController extends Controller
         Session::flash('success','request sent successfully');
 
         return redirect('home');
+    }
+
+    public function getRequestHistory(){
+        $customer_id = auth()->user()->id;
+        if(!$customer_id){
+            Session::flash('error','user logged in was not found');
+        }
+        $allRequests = ServiceRequest::where('customer_id', $customer_id)->orderBy('created_at', 'desc')->get();
+        return view('pages.request.request_history',compact('allRequests'));
     }
 }

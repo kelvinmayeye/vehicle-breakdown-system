@@ -5,6 +5,7 @@ namespace App\Models\requests;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\services\Service;
+use App\Models\User;
 
 class ServiceRequest extends Model
 {
