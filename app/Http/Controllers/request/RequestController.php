@@ -29,12 +29,13 @@ class RequestController extends Controller
         ]);
 
         $customer_id = auth()->user()->id;
+       // return $customer_id;
         if(!$customer_id){
             Session::flash('error','user logged in was not found');
         }
 
         $customerRequest = new ServiceRequest();
-        $customerRequest->customer_id = $request->service_id;
+        $customerRequest->customer_id = $customer_id;
         $customerRequest->mechanic_id = $request->mechanic_id;
         $customerRequest->service_id = $request->service_id;
         $customerRequest->description = $request->description;

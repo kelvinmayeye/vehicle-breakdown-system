@@ -10,9 +10,9 @@
             Recent Requests
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Request #1</li>
-            <li class="list-group-item">Request #2</li>
-            <li class="list-group-item">Request #3</li>
+          @foreach ( $customerRequests as $customerRequest)
+          <li class="list-group-item">{{ $customerRequest->service->name }}</li>
+          @endforeach
           </ul>
         </div>
       </div>
