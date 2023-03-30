@@ -73,6 +73,7 @@
         <div class="col">
             <h4 class="">Mechanics</h4>
             <ul>
+                <li><a href="{{ url('mechanic-register') }}">Mechanic Register</a></li>
                 <li><a href="#">Approve Mechanic</a></li>
                 <li><a href="#">All Mechanic</a></li>
                 <li><a href="#">Disable Mechanic</a></li>

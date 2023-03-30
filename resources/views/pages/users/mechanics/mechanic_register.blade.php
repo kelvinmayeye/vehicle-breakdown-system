@@ -5,10 +5,10 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
-            <h3 class="text-center mb-4">Register</h3>
+            <h3 class="text-center mb-4">Mechanic Register</h3>
             <form action="{{ url('register') }}" method="POST">
                 @csrf
-            <input type="hidden" name="is_mechanic" value="0">
+                <input type="hidden" name="is_mechanic" value="1">
               <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -47,9 +47,6 @@
               </div>
               <button type="submit" class="btn btn-primary btn-block mx-2">Register</button>
             </form>
-          </div>
-          <div class="text-center mt-4">
-            <a href="{{ url('/') }}">Login Here</a>
           </div>
         </div>
       </div>

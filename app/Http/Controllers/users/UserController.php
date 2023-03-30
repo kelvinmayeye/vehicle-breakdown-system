@@ -20,10 +20,17 @@ class UserController extends Controller
         return view('pages.users.register');
     }
 
-    public function storeCustomer(Request $request){
+    public function register(Request $request){
+
         if($request->password != $request->password_confirmation){
             Session::flash('error','sorry password did\'nt match');
             return back();
+        }
+        if($request->is_mechanic != 0){
+            $role = 1;
+
+        }else{
+            $role = 0;
         }
         $request->validate([
             'name' => 'required|string|max:255',
@@ -37,6 +44,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->phone_number = $request->input('phone_number');
+        $user->role = $role;
         $user->save();
         Session::flash('success','you\'re successfully registered');
          return back();
@@ -61,7 +69,6 @@ class UserController extends Controller
             ];
 
         if(Auth::attempt($credentials)){
-
             if(Auth::user()->role==0){
                 return redirect('home');
             }elseif(Auth::user()->role==1){
@@ -69,7 +76,6 @@ class UserController extends Controller
             }else{
                 return redirect('home');
             }
-
         }
         Session::flash("error","username or password is invalid");
         return back();
@@ -80,5 +86,14 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function mechanicRegisterPage(){
+        return view('pages.users.mechanics.mechanic_register');
+    }
+
+    public function mechanicRegister(Request $request){
+
+        return back();
     }
 }

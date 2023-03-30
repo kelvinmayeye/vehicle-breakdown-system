@@ -26,11 +26,16 @@ Route::get('/',[UserController::class,'getIndex'])->name('login');
 Route::post('login',[UserController::class,'login']);
 
 Route::get('register',[UserController::class,'getRegister']);
-Route::post('register-customer',[UserController::class,'storeCustomer']);
+Route::post('register',[UserController::class,'register']);
+// Mechanic Register
+Route::get('mechanic-register',[UserController::class,'mechanicRegisterPage']);
+Route::post('mechanic-register',[UserController::class,'mechanicRegister']);
 
 Route::middleware("auth")->group(function(){
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
     Route::post('logout',[UserController::class,'logout']);
+    // Mechanic User
+
 
 
     Route::get('all-services',[ServiceController::class,'getAllservice']);
