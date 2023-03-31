@@ -92,8 +92,13 @@ class UserController extends Controller
         return view('pages.users.mechanics.mechanic_register');
     }
 
-    public function mechanicRegister(Request $request){
+    public function getMechanics(){
+        $mechanics = User::where('role',1)->get();
+        return view('pages.users.mechanics.all_mechanic',compact('mechanics'));
+    }
 
+    public function activateMechanics(Request $request){
+        $mechanics = User::where('role',1)->get();
         return back();
     }
 }

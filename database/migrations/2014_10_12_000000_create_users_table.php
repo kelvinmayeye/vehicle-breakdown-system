@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->bigInteger('phone_number');
             $table->smallInteger('role')->default(0);
+            $table->smallInteger('is_active')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -29,13 +29,10 @@ Route::get('register',[UserController::class,'getRegister']);
 Route::post('register',[UserController::class,'register']);
 // Mechanic Register
 Route::get('mechanic-register',[UserController::class,'mechanicRegisterPage']);
-Route::post('mechanic-register',[UserController::class,'mechanicRegister']);
 
 Route::middleware("auth")->group(function(){
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
     Route::post('logout',[UserController::class,'logout']);
-    // Mechanic User
-
 
 
     Route::get('all-services',[ServiceController::class,'getAllservice']);
@@ -46,4 +43,7 @@ Route::middleware("auth")->group(function(){
     Route::get('request-history',[RequestController::class,'getRequestHistory']);
     Route::post('make-request',[RequestController::class,'store']);
     Route::post('cancel-request',[RequestController::class,'cancel']);
+    // Mechanic Register
+    Route::get('mechanics',[UserController::class,'getMechanics']);
+    Route::post('activate-mechanic',[UserController::class,'activateMechanic']);
 });

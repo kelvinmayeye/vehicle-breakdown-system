@@ -75,7 +75,7 @@
             <ul>
                 <li><a href="{{ url('mechanic-register') }}">Mechanic Register</a></li>
                 <li><a href="#">Approve Mechanic</a></li>
-                <li><a href="#">All Mechanic</a></li>
+                <li><a href="{{ url('mechanics') }}">All Mechanic</a></li>
                 <li><a href="#">Disable Mechanic</a></li>
               </ul>
         </div>
