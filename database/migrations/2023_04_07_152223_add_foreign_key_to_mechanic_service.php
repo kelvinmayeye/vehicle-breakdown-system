@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('payment', function (Blueprint $table) {
-            $table->bigInteger('customer_id')->unsigned()->change();
-            $table->bigInteger('mechanic_id')->unsigned()->change();
-            $table->bigInteger('service_id')->unsigned()->change();
-
-            $table->foreign('customer_id')->references('id')->on('users')->onDelete('restrict');
+        Schema::table('mechanic_service', function (Blueprint $table) {
             $table->foreign('mechanic_id')->references('id')->on('users')->onDelete('restrict');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('restrict');
+
         });
     }
 
@@ -31,7 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('payment', function (Blueprint $table) {
+        Schema::table('mechanic_service', function (Blueprint $table) {
             //
         });
     }

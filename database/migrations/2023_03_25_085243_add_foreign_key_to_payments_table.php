@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('customer_id');
-            $table->bigInteger('mechanic_id');
-            $table->bigInteger('service_id');
-            $table->bigInteger('amount');
-            $table->timestamps();
+        Schema::table('payments', function (Blueprint $table) {
+            $table->foreign('customer_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('restrict');
         });
     }
 
@@ -30,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment');
+        Schema::table('payment', function (Blueprint $table) {
+            //
+        });
     }
 };

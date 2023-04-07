@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('mechanic_service', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('mechanic_id');
-            $table->bigInteger('service_id');
+            $table->unsignedBigInteger('mechanic_id');
+            $table->unsignedBigInteger('service_id');
             $table->timestamps();
         });
     }

@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('request', function (Blueprint $table) {
-            $table->bigInteger('customer_id')->unsigned()->change();
-            $table->bigInteger('mechanic_id')->unsigned()->change();
-            $table->bigInteger('service_id')->unsigned()->change();
-
+        Schema::table('requests', function (Blueprint $table) {
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('restrict');
-            $table->foreign('mechanic_id')->references('id')->on('users')->onDelete('restrict');
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('restrict');
+            $table->foreign('mechanic_service_id')->references('id')->on('mechanic_service')->onDelete('restrict');
         });
     }
 
