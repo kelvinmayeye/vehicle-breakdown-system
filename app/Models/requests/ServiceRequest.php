@@ -11,7 +11,7 @@ class ServiceRequest extends Model
 {
     use HasFactory;
 
-    protected $table = "request";
+    protected $table = "requests";
 
     public function customer(){
         return $this->belongsTo(User::class, 'customer_id');
