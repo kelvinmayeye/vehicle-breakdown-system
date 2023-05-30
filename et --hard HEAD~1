@@ -1,0 +1,198 @@
+[33mcommit 529ff9fcbcf370d0e68669e485cdf6222847067e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Tue May 30 04:24:50 2023 +0300
+
+    working on setting the web-app welcome page
+    used free downloaded themes
+
+[33mcommit c92033628053f9f713e33c95230bbfab4781a3f3[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Tue May 30 01:45:17 2023 +0300
+
+    changed request table name from request to requests
+
+[33mcommit 30606a5fb0224e097102624e648b4646ec3726eb[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Fri Apr 7 19:05:42 2023 +0300
+
+    fix migrations
+
+[33mcommit 8d3251b7efa40f9dae3862172a9573094fc8bac4[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Fri Mar 31 05:37:05 2023 +0300
+
+    created confirm modal for activating mechanic
+
+[33mcommit 380c7960581b91beabf2904a8e177e19de04af1c[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Thu Mar 30 15:43:58 2023 +0300
+
+    added view for mechanic register
+    used same function used to register user register()  on the usercontroller
+
+[33mcommit b6daf95db004ec79cd45460de47bf0f5fd007561[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Thu Mar 30 00:24:13 2023 +0300
+
+    worked on canceling request
+
+[33mcommit 746229ebf920f05542379891e0c384b07d8302a9[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Wed Mar 29 23:21:17 2023 +0300
+
+    retrived logged in customer requests
+    added featured to display when was created using diffForHumans()
+
+[33mcommit e70dffd5a2ee08d0cd2b0ecb1279eae55f2e6e99[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Wed Mar 29 23:03:14 2023 +0300
+
+    added request and retrive users request from the dashboard
+
+[33mcommit 58b4b51be728a342c4c1f34fac75fc597ef0c6d1[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 10:47:14 2023 +0300
+
+    working add service request
+    changed request model name from Request to ServiceRequest so that to avoid naming conflict with \Http\Request class
+
+[33mcommit 5328633b2e609bd5d6bf6ff36cbbf2d70e5c0be4[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 09:39:53 2023 +0300
+
+    working on logout and destroying the users session
+
+[33mcommit cff432684be1a99dc7406f74fb859d509969da67[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 09:25:45 2023 +0300
+
+    validating routes to be unaccessible before user login
+    This is archived throught middleware auth
+
+[33mcommit 0ffa1d49360db254f92f75592e09686d7f90bbda[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 09:18:45 2023 +0300
+
+    login successfully
+
+[33mcommit 7f31bb4bbff076bfb11023356eb47eee0fac6c6a[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 08:54:35 2023 +0300
+
+    added make request view
+
+[33mcommit 615ccc7956e8f5540714de00ff0a3624cf166fb0[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 01:31:51 2023 +0300
+
+    retrived all services and mechanics that offers them successfull
+
+[33mcommit fb118e7da12840928181e4f4ff12d7a897c95d12[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 00:55:31 2023 +0300
+
+    added validation of add service form
+
+[33mcommit 02dbb533592b8a8f9f821dd16af45267f06a4252[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 00:52:11 2023 +0300
+
+    store service successfully
+
+[33mcommit 1f6400f5270aa3f61bade4ae85b9c2d0180b6070[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Mon Mar 27 00:29:01 2023 +0300
+
+    added all services views
+
+[33mcommit d753d37053c54a7a744ec56873a9566a20d75b99[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Sun Mar 26 17:09:15 2023 +0300
+
+    added add service modal
+
+[33mcommit 3ad23625c3fe91621fcb09445b7aed3589267c2b[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Sun Mar 26 15:53:48 2023 +0300
+
+    working on dashboard
+
+[33mcommit 7bb8b71fae86776119e34e1a72748366143ec78d[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Sun Mar 26 13:19:45 2023 +0300
+
+    add html5 validation on register form
+
+[33mcommit 00ef662273ded47a559f247a2235556dfcebbff5[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Sun Mar 26 13:12:45 2023 +0300
+
+    added password validation
+
+[33mcommit 5dd6ea32eef7cac5cebc14dc3b344aae1ba5e98c[m
+Author: kelvinmayeye <kevmayeye97@gmail.com>
+Date:   Sun Mar 26 12:51:09 2023 +0300
+
+    added store customer on db successfully
+
+[33mcommit fdd5e408303ad9348805f2dc1f2c41953bf9dcbc[m
+Author: Elieth <>
+Date:   Sun Mar 26 00:28:32 2023 +0300
+
+    setting up view successfully
+
+[33mcommit 5e7061af1ab4c8a3b9cb251488dff5fea7c46a94[m
+Author: Elieth <>
+Date:   Sat Mar 25 23:37:13 2023 +0300
+
+    defined relationship on mechanicserivice
+
+[33mcommit 2bb005e2a689ac344977ceb00d3353632c4ca53f[m
+Author: Elieth <>
+Date:   Sat Mar 25 23:32:01 2023 +0300
+
+    defined relationships on request model
+
+[33mcommit fa629ec45998da55061edec3bf6757954feb1358[m
+Author: Elieth <>
+Date:   Sat Mar 25 23:27:10 2023 +0300
+
+    defined relationships on the user model
+
+[33mcommit 86ff424af686532bdb27a33ad8b645bd181c28d0[m
+Author: Elieth <>
+Date:   Sat Mar 25 23:07:26 2023 +0300
+
+    added models of each relation
+
+[33mcommit bacaad9096351094cfdbcf41bb1331ae055f0435[m
+Author: Elieth <>
+Date:   Sat Mar 25 11:56:08 2023 +0300
+
+    successfully added foregin key on payment table
+
+[33mcommit 5d999a67329904aae44a27b6bea82347f8cd2dce[m
+Author: Elieth <>
+Date:   Sat Mar 25 11:52:02 2023 +0300
+
+    successfully added foreign keys on request table
+
+[33mcommit dd02334db7a55cde9db7dfb69ec8cc3d5ee2c10c[m
+Author: Elieth <>
+Date:   Sat Mar 25 11:33:14 2023 +0300
+
+    added doctrine/dbal dependency that provides an abstraction layer for working with databases
+    
+    Doctrine DBAL library is used as a dependency for the Laravel Doctrine ORM (Object-Relational Mapping) package
+
+[33mcommit d102cedb645621682b08e95051e22660914cfcac[m
+Author: Elieth <>
+Date:   Sat Mar 25 11:28:10 2023 +0300
+
+    migrations for creating tables
+
+[33mcommit 5e2605c84d7260712a342ede73abb99adea84f09[m
+Author: Elieth <>
+Date:   Sat Mar 25 09:21:14 2023 +0300
+
+    first commit, created service table and added role column on users table
