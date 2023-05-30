@@ -27,7 +27,7 @@
                                 <input type="password" class="form-control border-0" name="password_confirmation" placeholder="Confirm Password" style="height: 55px;" minlength="8" title="minimum character is 8" required>
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control border-0" name="phone_number" placeholder="Phone Number" style="height: 55px;">
+                                <input type="text" class="form-control border-0" name="phone_number" placeholder="Phone Number" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-secondary w-100 py-3" type="submit">Submit</button>

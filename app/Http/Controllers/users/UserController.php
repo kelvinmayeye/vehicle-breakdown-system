@@ -34,14 +34,13 @@ class UserController extends Controller
             $role = 0;
         }
 
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|email|unique:users,email',
-        //     'password' => 'required|string|min:8',
-        //     'phone_number' => 'required|string|min:10|max:20',
-        // ]);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8',
+            'phone_number' => 'required|string|min:10|max:20',
+        ]);
 
-        
 
         $user = new User();
         $user->name = $request->name;
@@ -50,7 +49,7 @@ class UserController extends Controller
         $user->phone_number = $request->phone_number;
         $user->role = $role;
         $user->save();
-        Session::flash('success','you\'re successfully registered');
+        Session::flash('success','Successfully registered');
          return back();
     }
 

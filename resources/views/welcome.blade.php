@@ -30,6 +30,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{url(asset('frontend/css/style.css'))}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -162,6 +164,23 @@
 
     <!-- Template Javascript -->
     <script src="{{url(asset('frontend/js/main.js'))}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
+    @if(Session::has('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ Session::get("success") }}',
+                customClass: {
+                    header: 'text-danger'
+                }
+            });
+        });
+    </script>
+@endif
+
 </body>
 
 </html>
