@@ -17,12 +17,12 @@ use App\Http\Controllers\request\RequestController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.master');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
-Route::get('/',[UserController::class,'getIndex'])->name('login');
+//Route::get('/',[UserController::class,'getIndex'])->name('login');
 Route::post('login',[UserController::class,'login']);
 
 Route::get('register',[UserController::class,'getRegister']);
