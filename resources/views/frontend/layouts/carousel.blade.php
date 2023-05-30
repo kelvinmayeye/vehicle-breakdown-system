@@ -26,7 +26,7 @@
                             <div class="col-10 col-lg-7 text-center text-lg-start">
                                 <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Get Back on the Road Quickly //</h6>
                                 <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Request assistance with just a few clicks.</h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
+                                {{-- <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a> --}}
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="{{url(asset('frontend/img/carousel-2.png'))}}" alt="">

@@ -53,6 +53,8 @@
     @include('frontend.layouts.navbar')
     <!-- Navbar End -->
 
+    {{-- login Model --}}
+    @include('partials.modals.frontend.login')
 
     <!-- Carousel Start -->
     @include('frontend.layouts.carousel')

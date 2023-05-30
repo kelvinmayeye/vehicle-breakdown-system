@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     //
     public function getIndex(){
-        return view('pages.users.login');
+        return view('welcome');
     }
 
     public function getRegister(){
