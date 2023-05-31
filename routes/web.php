@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('dash', function () {
+    return view('dashboard');
+});
+
 Route::get('/',[UserController::class,'getIndex'])->name('login');
 Route::post('login',[UserController::class,'login']);
 
@@ -33,10 +37,8 @@ Route::middleware("auth")->group(function(){
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
     Route::post('logout',[UserController::class,'logout']);
 
-
     Route::get('all-services',[ServiceController::class,'getAllservice']);
     Route::post('store-service',[ServiceController::class,'store']);
-
 
     Route::get('request',[RequestController::class,'getMakeRequest']);
     Route::get('request-history',[RequestController::class,'getRequestHistory']);
