@@ -8,6 +8,10 @@
                         aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                             class="hide-menu">Dashboard</span></a></li>
                 <li class="list-divider"></li>
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{url('mechanic-services')}}"
+                    aria-expanded="false"><i data-feather="archive" class="feather-icon"></i><span
+                        class="hide-menu">Mechanic Service</span></a></li>
+            <li class="list-divider"></li>
                 <li class="sidebar-item"> <a class="sidebar-link" href="{{url('request-history')}}"
                         aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                             class="hide-menu">My Requests

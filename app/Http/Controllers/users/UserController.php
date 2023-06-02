@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\requests\ServiceRequest;
+use App\Models\mechanicservices\MechanicService;
+use App\Models\services\Service;
 
 class UserController extends Controller
 {
@@ -117,6 +119,28 @@ class UserController extends Controller
             return back();
         }
         Session::flash('error','Sorry Mechanic identity was not found');
+        return back();
+    }
+
+    public function getMechanicServices(){
+        $mechanicServices = MechanicService::where('mechanic_id',auth()->user()->id)->get();
+        $services = Service::all();
+        return view('backend.pages.mechanics.mechanic_services',compact('mechanicServices','services'));
+    }
+
+    public function storeMechanicServices(Request $request){
+        $checkService = MechanicService::where('mechanic_id',auth()->user()->id)
+        ->where('service_id',$request->service_id)->get();
+        if($checkService->isEmpty()){
+            $mechanicService = new MechanicService();
+            $mechanicService->mechanic_id = auth()->user()->id;
+            $mechanicService->service_id = $request->service_id;
+            $mechanicService->save();
+            Session::flash('success','Service Added successfully');
+            return back();
+        }
+        
+        Session::flash('error','You have this service already');
         return back();
     }
 }

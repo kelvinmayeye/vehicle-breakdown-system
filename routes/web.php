@@ -48,4 +48,8 @@ Route::middleware("auth")->group(function(){
     // Mechanic Register
     Route::get('mechanics',[UserController::class,'getMechanics']);
     Route::post('activate-mechanic',[UserController::class,'activateMechanic']);
+
+    Route::get('mechanic-services',[UserController::class,'getMechanicServices']);
+    Route::post('add-mechanic-services',[UserController::class,'storeMechanicServices']);
+
 });
