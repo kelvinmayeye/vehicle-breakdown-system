@@ -97,11 +97,18 @@ class UserController extends Controller
 
     public function getMechanics(){
         $mechanics = User::where('role',1)->get();
-        return view('pages.users.mechanics.all_mechanic',compact('mechanics'));
+        return view('backend.pages.mechanics.all_mechanics',compact('mechanics'));
     }
 
-    public function activateMechanics(Request $request){
-        $mechanics = User::where('role',1)->get();
+    public function activateMechanic(Request $request){
+        $mechanic = User::find($request->mechanic_id);
+        if($mechanic){
+            $mechanic->is_active = 1;
+            $mechanic->save();
+            Session::flash('success','Mechanic activated successfully');
+            return back();
+        }
+        Session::flash('error','Sorry Mechanic identity was not found');
         return back();
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\requests\Request;
-use App\Models\mechanicServices\MechanicService;
+use App\Models\mechanicservices\MechanicService;
 use App\Models\payments\Payment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -51,7 +51,7 @@ class User extends Authenticatable
     }
 
     public function mechanicServices(){
-    return $this->hasMany(MechanicService::class);
+    return $this->hasMany(MechanicService::class,'mechanic_id');
     }
 
     public function payments(){

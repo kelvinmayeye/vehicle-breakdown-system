@@ -4,8 +4,8 @@ namespace App\Models\services;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\mechanicserives\MechanicService;
-use App\Models\request\ServiceRequest;
+use App\Models\mechanicservices\MechanicService;
+use App\Models\requests\ServiceRequest;
 
 class Service extends Model
 {

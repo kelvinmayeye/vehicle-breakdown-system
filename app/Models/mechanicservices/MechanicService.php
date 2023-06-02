@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\mechanicserives;
+namespace App\Models\mechanicservices;
 
 
 use App\Models\User;

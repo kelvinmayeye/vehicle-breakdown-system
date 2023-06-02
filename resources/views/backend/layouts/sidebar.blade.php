@@ -34,16 +34,10 @@
                         aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                             class="hide-menu">Mechanics </span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><span
+                        <li class="sidebar-item"><a href="{{url('mechanics')}}" class="sidebar-link"><span
                                     class="hide-menu"> All Mechanics
                                 </span></a>
-                        </li>
-
-                        <li class="sidebar-item"><a href="" class="sidebar-link"><span
-                            class="hide-menu"> Add Mechanics
-                        </span></a>
-                        </li>
-                        
+                        </li>                        
                     </ul>
                 </li>
             </ul>
