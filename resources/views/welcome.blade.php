@@ -43,11 +43,9 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Topbar Start -->
     @include('frontend.layouts.topbar')
     <!-- Topbar End -->
-
 
     <!-- Navbar Start -->
     @include('frontend.layouts.navbar')
@@ -59,7 +57,6 @@
     <!-- Carousel Start -->
     @include('frontend.layouts.carousel')
     <!-- Carousel End -->
-
 
     <!-- Service Start -->
     @include('frontend.layouts.service')
@@ -85,11 +82,9 @@
     @include('frontend.layouts.request')
     <!-- Request/Booking End -->
 
-
     <!-- Team Start -->
     @include('frontend.layouts.teamtestimonial')
     <!-- Testimonial End -->
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -122,14 +117,6 @@
                     <a class="btn btn-link" href="">Oil Changing</a>
                     <a class="btn btn-link" href="">Vacuam Cleaning</a>
                 </div>
-                {{-- <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="container">
@@ -137,8 +124,6 @@
                 <div class="row">
                     <div class="col-md-12 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#">Vehicle Breakdown System</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         Designed By <a class="border-bottom" href="#">Karim Designer</a>
                     </div>
                 </div>
@@ -151,6 +136,9 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+
+    {{-- Register Mechanics Modal --}}
+    @include('frontend.modals.register_mechanics')
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

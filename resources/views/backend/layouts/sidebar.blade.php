@@ -38,6 +38,11 @@
                                     class="hide-menu"> All Mechanics
                                 </span></a>
                         </li>
+
+                        <li class="sidebar-item"><a href="" class="sidebar-link"><span
+                            class="hide-menu"> Add Mechanics
+                        </span></a>
+                        </li>
                         
                     </ul>
                 </li>

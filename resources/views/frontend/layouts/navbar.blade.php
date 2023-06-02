@@ -12,6 +12,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Username / Account</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="" class="dropdown-item">My Dashboard</a>
+                    <a href="" class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#registerModal">Register As Mechanic</a>
                     <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login/Logout</button>
                 </div>
             </div>
