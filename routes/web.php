@@ -21,9 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('dash', function () {
-    return view('dashboard');
-});
+
+Route::get('dashboard',[UserController::class,'getDashBoards']);
 
 Route::get('/',[UserController::class,'getIndex'])->name('login');
 Route::post('login',[UserController::class,'login']);
@@ -34,6 +33,7 @@ Route::post('register',[UserController::class,'register']);
 Route::get('mechanic-register',[UserController::class,'mechanicRegisterPage']);
 
 Route::middleware("auth")->group(function(){
+    Route::get('dashboard',[UserController::class,'getDashBoards']);
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
     Route::post('logout',[UserController::class,'logout']);
 

@@ -11,7 +11,15 @@ use App\Models\requests\ServiceRequest;
 
 class UserController extends Controller
 {
-    //
+    
+    public function getDashBoards(){
+        $totalClients = User::where('role',0)->count();
+        $totalMechanics = User::where('role',1)->count();
+        $totalRequests = ServiceRequest::all()->count();
+        $requests = ServiceRequest::all();
+        return view('dashboard',compact('totalClients','totalRequests','totalMechanics','requests'));
+    }
+
     public function getIndex(){
         return view('welcome');
     }

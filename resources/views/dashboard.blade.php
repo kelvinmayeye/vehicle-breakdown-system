@@ -4,7 +4,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-7 align-self-center">
-            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Hellow</h3>
+            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Hello</h3>
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
@@ -30,9 +30,8 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                <span
-                                    class="badge bg-primary font-12 text-white font-weight-medium rounded-pill ms-2 d-lg-block d-md-none">+30</span>
+                                <h2 class="text-dark mb-1 font-weight-medium">{{$totalClients}}</h2>
+                                
                             </div>
                             <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">All Clients
                             </h6>
@@ -50,7 +49,7 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                    class="set-doller">$</sup>198</h2>
+                                    class="set-doller"></sup>{{$totalRequests}}</h2>
                             <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Requests
                             </h6>
                         </div>
@@ -67,9 +66,7 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">123</h2>
-                                <span
-                                    class="badge bg-danger font-12 text-white font-weight-medium rounded-pill ms-2 d-md-none d-lg-block">-2%</span>
+                                <h2 class="text-dark mb-1 font-weight-medium">{{$totalMechanics}}</h2>
                             </div>
                             <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Mechanics
                             </h6>
@@ -92,56 +89,96 @@
                         <div class="ms-auto">
                         </div>
                     </div>
+                    <div class="row">
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="p-2 bg-primary text-center">
+                                    <h1 class="font-light text-white">{{$totalRequests}}</h1>
+                                    <h6 class="text-white">Total Request</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="p-2 bg-cyan text-center">
+                                    <h1 class="font-light text-white">1,738</h1>
+                                    <h6 class="text-white">Responded Request</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="p-2 bg-success text-center">
+                                    <h1 class="font-light text-white">1100</h1>
+                                    <h6 class="text-white">Paid Request</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-hover">
+                                <div class="p-2 bg-danger text-center">
+                                    <h1 class="font-light text-white">964</h1>
+                                    <h6 class="text-white">Pending Request</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                    </div>
                     <div class="table-responsive">
-                        <table class="table no-wrap v-middle mb-0">
+                        <table id="zero_config" class="table table-striped table-bordered no-wrap">
                             <thead>
-                                <tr class="border-0">
-                                    <th class="border-0 font-14 font-weight-medium text-muted">#
-                                    </th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Customer name
-                                    </th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted">Service</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted">Amount</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                        Status
-                                    </th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                        Requested At
-                                    </th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted">Mechanic</th>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Location</th>
+                                    <th>Mechanic</th>
+                                    <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td></td>
-                                    <td class="border-top-0 px-2 py-4">
-                                        <div class="d-flex no-block align-items-center">
-                                            <div class="me-3"><img
-                                                    src="{{asset(url('backend/assets/images/user.jpg'))}}"
-                                                    alt="user" class="rounded-circle" width="45"
-                                                    height="45" /></div>
-                                            <div class="">
-                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                                    Gover</h5>
-                                                <span class="text-muted font-14">hgover@gmail.com</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="border-top-0 text-muted px-2 py-4 font-14">Battery</td>
-                                    <td class="border-top-0 px-2 py-4"> 2000 Tsh
-                                    </td>
-                                    <td class="border-top-0 text-center px-2 py-4"><i
-                                            class="fa fa-circle text-primary font-12"
-                                            data-bs-toggle="tooltip" data-placement="top"
-                                            title="In Testing"></i></td>
-                                    <td
-                                        class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                        3 hours ago
-                                    </td>
-                                    <td class="font-weight-medium text-dark border-top-0 px-2 py-4">Nduvini Service
-                                    </td>
+                                @foreach ($requests as $request)
+                                <tr>
+                                    <td><span class="fs-6">In Progress</span></td>
+                                    <td><a href="javascript:void(0)" class="font-weight-medium link">Elegant
+                                            Theme
+                                            Side Menu Open OnClick</a></td>
+                                    <td><a href="javascript:void(0)" class="font-bold link">276377</a></td>
+                                    <td>Elegant Admin</td>
+                                    <td>Eric Pratt</td>
+                                    <td>2018/05/01</td>
+                                    <td>Fazz</td>
                                 </tr>
+                                @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Location</th>
+                                    <th>Mechanic</th>
+                                    <th>Date</th>
+                                </tr>
+                            </tfoot>
                         </table>
+                        <ul class="pagination float-end">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
