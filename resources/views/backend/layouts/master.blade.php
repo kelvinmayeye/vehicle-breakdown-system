@@ -1,93 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Vehicle Breakdown | Home</title>
-
-    <!-- Bootstrap -->
-    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link href="{{ asset('backend/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="{{ asset('backend/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="{{ asset('backend/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="{{ asset('backend/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-    <!-- Datatables -->
-
-    <link href="{{ asset('backend/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('backend/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('backend/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('backend/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('backend/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="{{ asset('backend/build/css/custom.min.css') }}" rel="stylesheet">
-    
-        {{-- @include('partials.graphs.dashboard_graphscript') --}}
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Brakedown system</title>
+    <!-- Custom CSS -->
+    <link href="{{asset(url('backend/assets/extra-libs/c3/c3.min.css'))}}" rel="stylesheet">
+    <link href="{{asset(url('backend/assets/libs/chartist/dist/chartist.min.css'))}}" rel="stylesheet">
+    <link href="{{asset(url('backend/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css'))}}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{{asset(url('backend/dist/css/style.min.css'))}}" rel="stylesheet">
     
 </head>
 
-<body class="nav-md">
-    <div class="container body">
-        <div class="main_container">
-            <!-- top navigation -->
-            @include('backend.layouts.topnav')
-            <!-- /top navigation -->
+<body>
+    
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        
+        @include('backend.layouts.topbar')
 
-            <!-- page content -->
-            <div class="right_col" role="main">
-                <div class="">
+        @include('backend.layouts.sidebar')
 
-                    <div class="clearfix"></div>
-                    @include('backend.partials.notification')
-                    @yield('content')
 
-                    <!-- jQuery -->
-                    <script src="{{ asset('backend/vendors/jquery/dist/jquery.min.js') }}"></script>
-                    <!-- Bootstrap -->
-                    <script src="{{ asset('backend/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-                    <!-- FastClick -->
-                    <script src="{{ asset('backend/vendors/fastclick/lib/fastclick.js') }}"></script>
-                    <!-- NProgress -->
-                    <script src="{{ asset('backend/vendors/nprogress/nprogress.js') }}"></script>
-                    <!-- iCheck -->
-                    <script src="{{ asset('backend/vendors/iCheck/icheck.min.js') }}"></script>
-                    <!-- Datatables -->
-                    <script src="{{ asset('backend/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/jszip/dist/jszip.min.js') }}"></script>
+        <div class="page-wrapper">
+            @include('backend.partials.notification')
+            @yield('content')
 
-                    {{-- morris.js --}}
-                    <script src="{{ asset('backend/vendors/raphael/raphael.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/morris.js/morris.min.js') }}"></script>
 
-                    {{-- ECharts --}}
-                    <script src="{{ asset('backend/vendors/echarts/dist/echarts.min.js') }}"></script>
-                    <script src="{{ asset('backend/vendors/echarts/map/js/world.js') }}"></script>
 
-                    {{-- Colmn Charts --}}
-                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-                    {{-- Custom Theme Scripts --}}
-                    <script src="{{ asset('backend/build/js/custom.min.js') }}"></script>
+            <footer class="footer text-center text-muted">
+                All Rights Reserved by Freedash. Designed and Developed by <a
+                    href="#">Karim</a>.
+            </footer>
+            
+        </div>
+        
+    </div>
+    <script src="{{asset(url('backend/assets/libs/jquery/dist/jquery.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js'))}}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{{asset(url('backend/dist/js/app-style-switcher.js'))}}"></script>
+    <script src="{{asset(url('backend/dist/js/feather.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js'))}}"></script>
+    <script src="{{asset(url('backend/dist/js/sidebarmenu.js'))}}"></script>
+    <!--Custom JavaScript -->
+    <script src="{{asset(url('backend/dist/js/custom.min.js'))}}"></script>
+    <!--This page JavaScript -->
+    <script src="{{asset(url('backend/assets/extra-libs/c3/d3.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/extra-libs/c3/c3.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/libs/chartist/dist/chartist.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js'))}}"></script>
+    <script src="{{asset(url('backend/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js'))}}"></script>
+    <script src="{{asset(url('backend/dist/js/pages/dashboards/dashboard1.min.js'))}}"></script>
 </body>
 
 </html>

@@ -37,6 +37,7 @@ Route::middleware("auth")->group(function(){
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
     Route::post('logout',[UserController::class,'logout']);
 
+    Route::get('add-services',[ServiceController::class,'addservice']);
     Route::get('all-services',[ServiceController::class,'getAllservice']);
     Route::post('store-service',[ServiceController::class,'store']);
 

@@ -10,9 +10,14 @@ use App\Models\services\Service;
 class ServiceController extends Controller
 {
     //
+    public function addservice(){
+        
+        return view('backend.pages.services.add_service');
+    }
+
     public function getAllservice(){
         $services = Service::all();
-        return view('pages.service.all_services',compact('services'));
+        return view('backend.pages.services.all_services',compact('services'));
     }
 
     public function store(Request $request){

@@ -1,33 +1,49 @@
-<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-    <div class="menu_section">
-        <h3>General</h3>
-        <ul class="nav side-menu">
-            <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a></li>
-            <li><a><i class="fa fa-users"></i> Customer <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{ url('add/customer') }}">Add Customer</a></li>
-                    <li><a href="{{ url('all/customers') }}">View Customer</a></li>
-                </ul>
-            </li>
-            <li><a><i class="fa fa-edit"></i> SmartBin <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{ url('all/smartbin') }}">SmartBin</a></li>
-                    <li><a href="#">Location</a></li>
-                </ul>
-            </li>
-            <li><a><i class="fa fa-bar-chart-o"></i> Collections <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{ url('schedules') }}">Schedule</a></li>
-                    <li><a href="#">Log</a></li>
-                </ul>
-            </li>
-            <li><a><i class="fa fa-map-o"></i> Locations <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{url('locations')}}">Add Locations</a></li>
-                    {{-- <li><a href="#"></a></li> --}}
-                </ul>
-            </li>
-            <li><a href="{{ url('user-management') }}"><i class="fa fa-cogs"></i> User Management</a></li>
-        </ul>
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{url('dash')}}"
+                        aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                            class="hide-menu">Dashboard</span></a></li>
+                <li class="list-divider"></li>
+                <li class="sidebar-item"> <a class="sidebar-link" href="{{url('request-history')}}"
+                        aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                            class="hide-menu">My Requests
+                        </span></a>
+                </li>
+
+                <li class="list-divider"></li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="{{url('/')}}"
+                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                            class="hide-menu">Services </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item"><a href="{{url('all-services')}}" class="sidebar-link"><span
+                                    class="hide-menu"> All Services
+                                </span></a>
+                        </li>
+
+                        <li class="sidebar-item"><a href="add-services" class="sidebar-link"><span
+                            class="hide-menu"> Add Service
+                        </span></a>
+                </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="{{url('/')}}"
+                        aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                            class="hide-menu">Mechanics </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item"><a href="" class="sidebar-link"><span
+                                    class="hide-menu"> All Mechanics
+                                </span></a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
     </div>
-</div>
+    <!-- End Sidebar scroll-->
+</aside>

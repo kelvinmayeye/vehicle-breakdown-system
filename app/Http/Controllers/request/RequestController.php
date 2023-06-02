@@ -50,9 +50,16 @@ class RequestController extends Controller
         $customer_id = auth()->user()->id;
         if(!$customer_id){
             Session::flash('error','user logged in was not found');
+            return back();
         }
         $allRequests = ServiceRequest::where('customer_id', $customer_id)->orderBy('created_at', 'desc')->get();
-        return view('pages.request.request_history',compact('allRequests'));
+        if($allRequests->isEmpty()){
+            Session::flash('error','Sorry Youre Dont have any Request yet!');
+            return back();
+        }
+
+        return $allRequests;    
+        return view('backend.pages.myrequests',compact('allRequests'));
     }
 
     public function cancel(Request $request){
