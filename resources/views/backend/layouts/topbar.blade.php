@@ -32,16 +32,20 @@
                         <img src="{{asset(url('backend/assets/images/user.jpg'))}}" alt="user" class="rounded-circle"
                             width="40">
                         <span class="ms-2 d-none d-lg-inline-block"><span> <span
-                                class="text-dark">Username</span> <i data-feather="chevron-down"
+                                class="text-dark">{{auth()->user()->name}}</span> <i data-feather="chevron-down"
                                 class="svg-icon"></i></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-right user-dd animated flipInY">
                         <a class="dropdown-item" href="#"><i data-feather="user"
                                 class="svg-icon me-2 ms-1"></i>
                             My Profile</a>
-                        <a class="dropdown-item" href="#"><i data-feather="power"
-                                class="svg-icon me-2 ms-1"></i>
-                            Logout</a>
+                            <form action="{{url('logout')}}" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item" href="#"><i data-feather="power"
+                                    class="svg-icon me-2 ms-1"></i>
+                                Logout</a>
+                            </form>
+                        
                     </div>
                 </li>
             </ul>

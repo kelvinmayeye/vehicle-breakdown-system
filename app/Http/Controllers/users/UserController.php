@@ -83,11 +83,9 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials)){
             if(Auth::user()->role==0){
-                return redirect('home');
+                return redirect('dashboard');
             }elseif(Auth::user()->role==1){
-                return redirect('home');
-            }else{
-                return redirect('home');
+                return redirect('dashboard');
             }
         }
         Session::flash("error","username or password is invalid");
