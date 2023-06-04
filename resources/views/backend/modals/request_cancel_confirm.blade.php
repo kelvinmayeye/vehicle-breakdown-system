@@ -1,5 +1,5 @@
 <!-- Danger Alert Modal -->
-<div id="cancel-request-modal{{$Request->id}}" class="modal fade" tabindex="-1" role="dialog"
+<div id="cancel-request-modal{{$request->id}}" class="modal fade" tabindex="-1" role="dialog"
 aria-hidden="true">
 <div class="modal-dialog modal-sm">
     <div class="modal-content modal-filled bg-danger">
@@ -10,7 +10,7 @@ aria-hidden="true">
                 <p class="mt-3">Your about to cancel this request</p>
                 <form action="{{url('cancel-request')}}" method="post">
                   @csrf
-                  <input type="hidden" name="request_id" value="{{$Request->id}}">
+                  <input type="hidden" name="request_id" value="{{$request->id}}">
                   <button type="submit" class="btn btn-light my-2"
                     data-bs-dismiss="modal">Continue</button>
                 </form>

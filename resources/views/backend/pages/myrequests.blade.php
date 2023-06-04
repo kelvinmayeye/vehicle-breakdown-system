@@ -7,8 +7,7 @@
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
-                        <a href="#" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#danger-header-modal">Make Request</a>
+                        <a href="{{url('all-services')}}" class="btn btn-primary">Make Request</a>
                     </ol>
                 </nav>
             </div>
@@ -42,23 +41,40 @@
                               </tr>
                             </thead>
                             <tbody>
-                                @foreach ( $allRequests as $key=>$Request )
+                                @foreach ( $allRequests as $key=>$request )
                                 <tr>
                                     <th>{{ $key+1 }}</th>
-                                    <td>{{ $Request->mechanicService->service->name }}</td>
-                                    <td>{{ $Request->description }}</td>
-                                    <td>{{ $Request->mechanicService->mechanic->name }}</td>
-                                    <td>{{ $Request->location }}</td>
-                                    <td>{{ $Request->status }}</td>
-                                    <td>{{ $Request->created_at->diffForHumans() }}</td>
-                                    @if ($Request->status != 'cancelled' )
-                                    <td><a class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#cancel-request-modal{{$Request->id}}">cancel</a></td>
-                                    @else
-                                    <td></td>
-                                    @endif
+                                    <td>{{ $request->mechanicService->service->name }}
+                                        @if (!$request->payment)
+                                            <span class="badge text-bg-danger">Not paid</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ $request->description }}</td>
+                                    <td>{{ $request->mechanicService->mechanic->name }}</td>
+                                    <td>{{ $request->location }}</td>
+                                    <td>{{ $request->status }}</td>
+                                    <td>{{ $request->created_at->diffForHumans() }}</td>
+                                    
+                                    <td>
+                                        @if ($request->status != 'cancelled')
+                                        <div class="dropdown me-1">
+                                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle"
+                                                id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" data-offset="10,20">
+                                                <i class="fa fa-list"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                                <a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#cancel-request-modal{{$request->id}}">cancel</a>
+                                                <a class="dropdown-item" data-bs-toggle="modal"
+                                                data-bs-target="#multiple-one">pay</a>
+                                            </div>
+                                        </div>
+                                        @endif
+                                    </td>
                                   </tr>
                                   @include('backend.modals.request_cancel_confirm')
+                                  @include('backend.modals.service_request_payment')
                                 @endforeach
                         </tbody>
                     </table>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\payments\PaymentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\users\UserController;
 
@@ -58,6 +59,9 @@ Route::middleware("auth")->group(function(){
     Route::get('service-mechanic/{id}',[RequestController::class,'getMechanicServices']);
     Route::post('add-request',[RequestController::class,'storeRequest']);
     Route::post('cancel-request',[RequestController::class,'cancelRequest']);
+
+
+    Route::post('cancel-request',[PaymentsController::class,'store']);
 
 
 });

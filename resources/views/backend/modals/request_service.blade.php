@@ -27,9 +27,9 @@ aria-labelledby="danger-header-modalLabel" aria-hidden="true">
                             <label for="">Location</label>
                             <select name="location" class="form-control">
                                 <option selected disabled>Select your location</option>
-                                <option value="">changarawe</option>
-                                <option value="">mindu</option>
-                                <option value="">mlali</option>
+                                <option value="changarawe">changarawe</option>
+                                <option value="mindu">mindu</option>
+                                <option value="mlali">mlali</option>
                             </select>
                         </div>
                     </div>

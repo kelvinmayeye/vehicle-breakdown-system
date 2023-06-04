@@ -1,6 +1,5 @@
 @extends('backend.layouts.master')
 @section('content')
-
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-7 align-self-center">
@@ -14,8 +13,7 @@
                     </ol>
                 </nav>
             </div>
-            <a class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#danger-header-modal">Make Request</a>
+            <a href="{{url('all-services')}}" class="btn btn-primary">Make Request</a>
         </div>
         <div class="col-5 align-self-center">
             <div class="customize-input float-end">
@@ -98,7 +96,7 @@
                             <div class="card card-hover">
                                 <div class="p-2 bg-primary text-center">
                                     <h1 class="font-light text-white">{{$totalRequests}}</h1>
-                                    <h6 class="text-white">Total Request</h6>
+                                    <h6 class="text-white">Total Request Payments</h6>
                                 </div>
                             </div>
                         </div>
@@ -146,15 +144,13 @@
                             <tbody>
                                 @foreach ($requests as $request)
                                 <tr>
-                                    <td><span class="fs-6">In Progress</span></td>
-                                    <td><a href="javascript:void(0)" class="font-weight-medium link">Elegant
-                                            Theme
-                                            Side Menu Open OnClick</a></td>
-                                    <td><a href="javascript:void(0)" class="font-bold link">276377</a></td>
-                                    <td>Elegant Admin</td>
-                                    <td>Eric Pratt</td>
-                                    <td>2018/05/01</td>
-                                    <td>Fazz</td>
+                                    <td><span class="fs-6">{{$request->status}}</span></td>
+                                    <td><a href="javascript:void(0)" class="font-weight-medium link">{{$request->customer->name}}</a></td>
+                                    <td><a href="javascript:void(0)" class="font-bold link">{{$request->mechanicService->service->name}}</a></td>
+                                    <td>{{$request->location}}</td>
+                                    <td>{{$request->mechanicService->mechanic->name}}</td>
+                                    <td>{{$request->created_at->diffForHumans()}}</td>
+                                    <td></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -188,7 +184,4 @@
         </div>
     </div>
 </div>
-
-{{-- @include('backend.modals.make_request') --}}
-
 @endsection
