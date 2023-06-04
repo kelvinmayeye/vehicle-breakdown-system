@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\request;
 
 use App\Http\Controllers\Controller;
+use App\Models\mechanicservices\MechanicService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\requests\ServiceRequest;
@@ -20,31 +21,50 @@ class RequestController extends Controller
         return view('pages.request.make_request',compact('services','mechanics'));
     }
 
-    public function store(Request $request){
+    public function checkUserAuth(){ 
+        // Check if user is logged in
+        if (!auth()->check()) {
+            Session::flash('error', 'Please login');
+            return back();
+        }else{
+            
+            return redirect('all-services');
+        }
+    }
 
-        $validatedData = $request->validate([
-            'service_id' => 'required',
-            'mechanic_id' => 'required',
-            'description' => 'required'
-        ]);
+    public function getMechanicServices($id){
+        $mechanicService = MechanicService::where('service_id',$id)->get();
+        $service = Service::where('id',$id)->first();
+        $serviceName = $service->name;
+        return view('backend.pages.requestservice.servicesbymechanic',compact('mechanicService','serviceName'));
+    }
 
-        $customer_id = auth()->user()->id;
-        if(!$customer_id){
-            Session::flash('error','user logged in was not found');
+    public function storeRequest(Request $request){ 
+            $customer_id = auth()->user()->id;
+            if(!$customer_id){
+                Session::flash('error','user logged in was not found');
+                return back();
+            }
+    
+            $customerRequest = new ServiceRequest();
+            $customerRequest->customer_id = $customer_id;
+            $customerRequest->mechanic_service_id = $request->mechanic_service_id;
+            $customerRequest->description = $request->description;
+            $customerRequest->location = $request->location;
+            $customerRequest->status = "sent";
+            $customerRequest->save();
+            Session::flash('success','request sent successfully');
             return back();
         }
 
-        $customerRequest = new ServiceRequest();
-        $customerRequest->customer_id = $customer_id;
-        $customerRequest->mechanic_id = $request->mechanic_id;
-        $customerRequest->service_id = $request->service_id;
-        $customerRequest->description = $request->description;
-        $customerRequest->status = "sent";
-        $customerRequest->save();
-        Session::flash('success','request sent successfully');
-
-        return redirect('home');
-    }
+        public function cancelRequest(Request $request){
+            $customerRequest = ServiceRequest::find($request->request_id);
+            $customerRequest->status = "cancelled";
+            $customerRequest->save();
+            Session::flash('success','request cancelled successfully');
+            return back();
+        }
+    
 
     public function getRequestHistory(){
         $customer_id = auth()->user()->id;
@@ -57,8 +77,7 @@ class RequestController extends Controller
             Session::flash('error','Sorry Youre Dont have any Request yet!');
             return back();
         }
-
-        return $allRequests;    
+   
         return view('backend.pages.myrequests',compact('allRequests'));
     }
 
@@ -77,4 +96,6 @@ class RequestController extends Controller
         return redirect('request-history');
 
     }
+
+
 }

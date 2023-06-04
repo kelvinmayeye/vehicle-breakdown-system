@@ -52,7 +52,7 @@
     <!-- Navbar End -->
 
     {{-- login Model --}}
-    @include('partials.modals.frontend.login')
+    @include('frontend.modals.login')
 
     <!-- Carousel Start -->
     @include('frontend.layouts.carousel')
@@ -140,6 +140,7 @@
     {{-- Register Mechanics Modal --}}
     @include('frontend.modals.register_mechanics')
 
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -155,6 +156,7 @@
     <!-- Template Javascript -->
     <script src="{{url(asset('frontend/js/main.js'))}}"></script>
 
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
     @if(Session::has('success'))
     <script>
@@ -163,6 +165,21 @@
                 icon: 'success',
                 title: 'Success!',
                 text: '{{ Session::get("success") }}',
+                customClass: {
+                    header: 'text-danger'
+                }
+            });
+        });
+    </script>
+    @endif
+
+    @if(Session::has('error'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: '{{ Session::get("error") }}',
                 customClass: {
                     header: 'text-danger'
                 }

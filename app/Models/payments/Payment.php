@@ -2,7 +2,7 @@
 
 namespace App\Models\payments;
 
-
+use App\Models\requests\ServiceRequest;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,11 +13,11 @@ class Payment extends Model
 
 
     public function customer(){
-    return $this->belongsTo(User::class, 'customer_id');
+        return $this->belongsTo(User::class, 'customer_id');
     }
 
-    public function mechanic(){
-    return $this->belongsTo(User::class, 'mechanic_id');
+    public function request(){
+        return $this->belongsTo(ServiceRequest::class, 'request_id');
     }
 
 }

@@ -45,18 +45,20 @@
                                 @foreach ( $allRequests as $key=>$Request )
                                 <tr>
                                     <th>{{ $key+1 }}</th>
-                                    <td>{{ $Request->service->name }}</td>
-                                    <td>{{ $Request->service->description }}</td>
-                                    <td>{{ $Request->mechanic->name }}</td>
+                                    <td>{{ $Request->mechanicService->service->name }}</td>
+                                    <td>{{ $Request->description }}</td>
+                                    <td>{{ $Request->mechanicService->mechanic->name }}</td>
                                     <td>{{ $Request->location }}</td>
                                     <td>{{ $Request->status }}</td>
                                     <td>{{ $Request->created_at->diffForHumans() }}</td>
                                     @if ($Request->status != 'cancelled' )
-                                    <td><a href="#" data-toggle="modal" data-target="#staticBackdrop{{ $Request->id }}" class="badge badge-danger">Cancel</a>
-                                    </td>
+                                    <td><a class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#cancel-request-modal{{$Request->id}}">cancel</a></td>
+                                    @else
+                                    <td></td>
                                     @endif
                                   </tr>
-                                  @include('partials.modals.request_cancel_confirm')
+                                  @include('backend.modals.request_cancel_confirm')
                                 @endforeach
                         </tbody>
                     </table>

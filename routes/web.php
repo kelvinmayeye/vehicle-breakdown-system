@@ -32,6 +32,9 @@ Route::post('register',[UserController::class,'register']);
 // Mechanic Register
 Route::get('mechanic-register',[UserController::class,'mechanicRegisterPage']);
 
+//Request
+Route::post('make-request',[RequestController::class,'checkUserAuth']);
+
 Route::middleware("auth")->group(function(){
     Route::get('dashboard',[UserController::class,'getDashBoards']);
     Route::get('home',[UserController::class,'getDashBoard'])->name('home');
@@ -43,7 +46,7 @@ Route::middleware("auth")->group(function(){
 
     Route::get('request',[RequestController::class,'getMakeRequest']);
     Route::get('request-history',[RequestController::class,'getRequestHistory']);
-    Route::post('make-request',[RequestController::class,'store']);
+    
     Route::post('cancel-request',[RequestController::class,'cancel']);
     // Mechanic Register
     Route::get('mechanics',[UserController::class,'getMechanics']);
@@ -51,5 +54,10 @@ Route::middleware("auth")->group(function(){
 
     Route::get('mechanic-services',[UserController::class,'getMechanicServices']);
     Route::post('add-mechanic-services',[UserController::class,'storeMechanicServices']);
+
+    Route::get('service-mechanic/{id}',[RequestController::class,'getMechanicServices']);
+    Route::post('add-request',[RequestController::class,'storeRequest']);
+    Route::post('cancel-request',[RequestController::class,'cancelRequest']);
+
 
 });

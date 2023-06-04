@@ -2,6 +2,7 @@
 
 namespace App\Models\requests;
 
+use App\Models\mechanicservices\MechanicService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\services\Service;
@@ -17,8 +18,8 @@ class ServiceRequest extends Model
         return $this->belongsTo(User::class, 'customer_id');
         }
 
-        public function mechanic(){
-        return $this->belongsTo(User::class, 'mechanic_id');
+        public function mechanicService(){
+        return $this->belongsTo(MechanicService::class, 'mechanic_service_id');
         }
 
         public function service(){

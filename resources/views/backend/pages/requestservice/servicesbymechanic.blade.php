@@ -7,7 +7,7 @@
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
-                        <li class="breadcrumb-item"><a href="index.html">All Our Service</a>
+                        <li class="breadcrumb-item"><a href="index.html">{{$serviceName}} Service</a>
                         </li>
                     </ol>
                 </nav>
@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-4">
-                        <h4 class="card-title">Available Services</h4>
+                        <h4 class="card-title">Services</h4>
                         <div class="ms-auto">
                         </div>
                     </div>
@@ -42,25 +42,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($services as $key=>$service)
+                                @foreach ($mechanicService as $key=>$mechanicService)
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td class="border-top-0 px-2 py-4">
                                         <div class="d-flex no-block align-items-center">
                                             <div class="">
-                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">{{$service->name}}</h5>
+                                                <h5 class="text-dark mb-0 font-16 font-weight-medium">{{$mechanicService->service->name}}</h5>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="border-top-0 text-muted px-2 py-4 font-14">
-                                        <a href="{{url('service-mechanic/'.$service->id)}}" class="btn btn-danger">{{$service->mechanicServices->count()}} {{ Illuminate\Support\Str::plural('Mechanic', $service->mechanicServices->count()) }}</a>
+                                        <a href="#" >{{$mechanicService->mechanic->name}}</a>
                                     </td>
                                     
-                                    <td class="border-top-0 px-2 py-4">{{$service->price}}</td>
+                                    <td class="border-top-0 px-2 py-4">{{$mechanicService->service->price}}</td>
                                     <td class="border-top-0 text-center px-2 py-4">
-                                        <button class="btn btn-primary">Request</button>
+                                        <a class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#request-service-modal">Request</a>
                                     </td>
                                 </tr>
+                                @include('backend.modals.request_service')
                                 @endforeach
                             </tbody>
                         </table>

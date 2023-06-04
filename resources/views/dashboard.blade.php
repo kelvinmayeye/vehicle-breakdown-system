@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-7 align-self-center">
             <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Hello</h3>
+            
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
@@ -13,6 +14,8 @@
                     </ol>
                 </nav>
             </div>
+            <a class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#danger-header-modal">Make Request</a>
         </div>
         <div class="col-5 align-self-center">
             <div class="customize-input float-end">
@@ -185,5 +188,7 @@
         </div>
     </div>
 </div>
+
+{{-- @include('backend.modals.make_request') --}}
 
 @endsection

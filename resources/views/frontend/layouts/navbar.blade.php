@@ -34,6 +34,9 @@
                 
             </div>
         </div>
-        <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></a>
+        <form action="{{url('make-request')}}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Request Service<i class="fa fa-arrow-right ms-3"></i></button>
+        </form>
     </div>
 </nav>
